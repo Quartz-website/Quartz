@@ -1,0 +1,545 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quartz — About Us</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #120f18;
+  --surface: rgba(255,255,255,.10);
+  --text: #fff7fb;
+  --muted: #e7dce5;
+  --accent: #c66bff;
+  --accent2: #ffd1ef;
+  --border: rgba(255,255,255,.20);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.65)),
+    url("https://scontent.fmnl17-6.fna.fbcdn.net/v/t1.15752-9/795581019_2985977885067906_2171794633061627627_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeEqTN2yzysLx0XrywVhZX5BX4NWeFCzdUZfg1Z4ULN1RvubyXyL3gjWj1gL6_neXxD63k7DJ3bknUzkIn21R4nP&_nc_ohc=R764TswxI54Q7kNvwG6XO6n&_nc_oc=Ado_3Ncu3s9LNpbxz7P2YEfQgB0HO_Lusc8Z7RgcCcWtGeHezx52uCCNR_y_HwuOQy0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl17-6.fna&_nc_ss=7a22e&oh=03_Q7cD6QHI2d7DW8BFF17SvYTeKy2TnMg1B1o1eSZkGMXtOpFEnQ&oe=6AC71781");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: saturate(1.05);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(10,10,20,.35);
+}
+
+.nav {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1160px, 94%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 10px 16px;
+  background: rgba(20,20,30,.70);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.25);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.brand img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.links a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 9px 12px;
+  border-radius: 12px;
+  font-size: .9rem;
+  font-weight: 600;
+  transition: .25s ease;
+}
+
+.links a:hover {
+  background: var(--accent);
+  color: white;
+}
+
+main {
+  flex: 1;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 150px 6% 90px;
+}
+
+.hero-card {
+  width: min(900px, 100%);
+  padding: 48px 50px;
+  background: rgba(20,20,30,.66);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  box-shadow: 0 20px 80px rgba(0,0,0,.35);
+}
+
+.badge {
+  display: inline-block;
+  padding: 7px 14px;
+  margin-bottom: 24px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: white;
+  font-weight: 800;
+  font-size: .8rem;
+  letter-spacing: .04em;
+}
+
+.about-content h1 {
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: -.05em;
+  margin-bottom: 10px;
+}
+
+.about-content p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  letter-spacing: .01em;
+  margin-bottom: 20px;
+}
+
+.about-content strong {
+  color: white;
+  font-weight: 800;
+}
+
+.text-section {
+  margin-top: 38px;
+}
+
+.text-section h2 {
+  margin-bottom: 18px;
+  color: var(--accent2);
+  font-size: 1.45rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.handsign-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 28px auto 34px;
+  padding: 15px;
+}
+
+.handsign-image {
+  display: block;
+  width: min(420px, 90%);
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 15px 45px rgba(0,0,0,.35);
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.handsign-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 55px rgba(198,107,255,.25);
+}
+
+.hashtags {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--accent2);
+  font-weight: 800;
+  line-height: 2;
+  word-spacing: 6px;
+}
+
+footer {
+  width: 100%;
+  margin-top: auto;
+  padding: 35px 6%;
+
+  text-align: center;
+
+  color: var(--muted);
+  background: rgba(10,10,20,.45);
+
+  border-top: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+
+  line-height: 1.8;
+}
+
+footer b {
+  color: var(--text);
+}
+
+footer i {
+  color: var(--accent2);
+}
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: rgba(0,0,0,.82);
+  backdrop-filter: blur(8px);
+}
+
+.image-modal.show {
+  display: flex;
+}
+
+.image-modal img {
+  max-width: 90vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px;
+  border: 2px solid var(--border);
+  box-shadow: 0 20px 80px rgba(0,0,0,.8);
+  animation: zoomIn .25s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(.7);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close-modal {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-size: 28px;
+  line-height: 45px;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+.close-modal:hover {
+  transform: scale(1.1);
+  background: #a943e8;
+}
+
+@media (max-width: 800px) {
+
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .links {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .links a {
+    font-size: .82rem;
+    padding: 7px 9px;
+  }
+
+  .hero {
+    padding: 200px 5% 70px;
+  }
+
+  .hero-card {
+    padding: 35px 24px;
+    border-radius: 24px;
+  }
+
+  .about-content p {
+    font-size: .98rem;
+    line-height: 1.8;
+  }
+
+  .text-section {
+    margin-top: 30px;
+  }
+
+  .handsign-wrapper {
+    margin: 22px auto;
+    padding: 10px;
+  }
+
+  .handsign-image {
+    width: min(350px, 100%);
+  }
+
+  .image-modal {
+    padding: 15px;
+  }
+
+  .image-modal img {
+    max-width: 95vw;
+    max-height: 80vh;
+  }
+
+  .close-modal {
+    top: 15px;
+    right: 15px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<nav class="nav">
+
+  <a class="brand" href="#home">
+
+
+<img
+  src="https://scontent.fmnl17-8.fna.fbcdn.net/v/t39.30808-1/765997381_122106112023420465_8051386350113433845_n.jpg?stp=dst-jpg_tt6&cstp=mx1360x1357&ctp=s200x200&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeHvNk5-_E67qviFsij41dRS0rTD5xikKo_StMPnGKQqj4L8nBtAiqV2viTwJb2DZmgLwQzbySTCRAZNdoK26vh1&_nc_ohc=-2YK7aXY5lgQ7kNvwG4VxOs&_nc_oc=Adr62UQ8E28KRUgtVFpCcZ7p6eEpaTQkZZsrLvFpJQJp6bGNK6B5dY_MLKY5wpOeuGs&_nc_zt=24&_nc_ht=scontent.fmnl17-8.fna&_nc_gid=ax7N0guF_g6ECVeAklTI_g&_nc_ss=7a2a8&oh=00_AQJkYyBXDk2LqQti2vocWz3Y9tgFYxC-zs3wQk942G8rmQ&oe=6AA58E78"
+  alt="Quartz logo"
+>
+
+<span>QUARTZ</span>
+
+
+  </a>
+
+<div class="links">
+    <a href="home.html">Home</a>
+    <a href="About%20us.html">About us</a>
+    <a href="students-officers.html">Students &amp; Officers</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="gallery.html">Gallery</a>
+  </div>
+
+</nav>
+
+<main>
+
+  <header id="home" class="hero">
+
+
+<div class="hero-card">
+
+  <span class="badge">ABOUT US</span>
+
+  <div class="about-content">
+
+    <div class="text-section"> <p> Quartz is more than just the name of our section. It represents our <strong>growth, potential, experiences, and memories</strong> that we create together throughout the school year. </p> 
+      <p> Just like quartz, each member of our section has their own individual qualities. We may have different personalities, talents, interests, and strengths. But together, we form a family. </p> </div> 
+    <div class="text-section">
+       <h2>Our Handsign</h2> 
+      <p> Our handsign represents who we are. </p>
+
+    
+      <div class="handsign-wrapper">
+
+        <img
+          class="handsign-image"
+          src="sign.png"
+          alt="Quartz section handsign"
+          id="handsignImage"
+        >
+
+      </div>
+
+      <p>
+        The curled finger in the middle, boxed in green,
+        symbolizes you as a piece of charcoal. Although it
+        may seem ordinary and of little value at first,
+        it possesses the potential to become something
+        extraordinary.
+      </p>
+
+      <p>
+        The two fingers surrounding the charcoal represent
+        your <strong>safe space</strong> — a place where you
+        gain experience, develop your strengths, and gradually
+        transform into the unique form of quartz you are
+        destined to become.
+      </p>
+
+      <p>
+        Our handsign reminds us that growth takes time.
+        With the right environment, experiences, support,
+        and determination, we can develop our potential
+        and become the best version of ourselves.
+      </p>
+
+    </div>
+
+    <div class="hashtags">
+
+      Keep growing, keep achieving, and keep shining ✨
+
+      <br>
+
+      #kuwentomokumikinang
+      &nbsp;&nbsp;
+      #shine10quartz
+
+    </div>
+
+  </div>
+
+</div>
+
+
+  </header>
+
+</main>
+
+<div class="image-modal" id="imageModal">
+
+<button
+class="close-modal"
+id="closeModal"
+aria-label="Close image"
+
+>
+
+
+&times;
+
+
+  </button>
+
+<img
+id="zoomedImage"
+src=""
+alt="Zoomed handsign"
+
+>
+
+</div>
+
+<footer>
+  <p>
+    © <b>2026–2027 Quartz Student Organization</b>
+    · <i>Making memories, one school year at a time.</i>
+  </p>
+</footer>
+
+
+<script>
+
+const handsignImage = document.getElementById("handsignImage");
+const imageModal = document.getElementById("imageModal");
+const zoomedImage = document.getElementById("zoomedImage");
+const closeModal = document.getElementById("closeModal");
+
+function openImage() {
+  zoomedImage.src = handsignImage.src;
+  zoomedImage.alt = handsignImage.alt;
+  imageModal.classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+function closeImage() {
+  imageModal.classList.remove("show");
+  document.body.style.overflow = "";
+}
+
+handsignImage.addEventListener("click", openImage);
+
+closeModal.addEventListener("click", closeImage);
+
+imageModal.addEventListener("click", function(event) {
+  if (event.target === imageModal) {
+    closeImage();
+  }
+});
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closeImage();
+  }
+});
+
+</script>
+
+</body>
+</html>
